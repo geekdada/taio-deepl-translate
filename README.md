@@ -1,4 +1,4 @@
-![](./assets/Launch.png)
+![](assets/Launch.png)
 
 # taio-deepl-translate
 
@@ -7,7 +7,7 @@ DeepL translate for Taio.app
 ## 安装
 
 <a href="taio://actions?action=import&url=https%3A%2F%2Fgithub.com%2Fgeekdada%2Ftaio-deepl-translate%2Fraw%2Fmaster%2FDeepL%20Translate.taioactions" target="__blank" title="点击安装">
-<img width=120 src="./assets/footer_logo.png">
+<img width=120 src="assets/footer_logo.png">
 </a>
 
 ## 使用
