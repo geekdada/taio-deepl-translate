@@ -6,7 +6,7 @@ DeepL translate for [Taio.app](https://taio.app/)
 
 ## 安装
 
-[点我安装](https://taio-deepl-translate.nerdynerd.org/)
+[**点我安装**](taio://actions?action=import&url=https%3A%2F%2Fgithub.com%2Fgeekdada%2Ftaio-deepl-translate%2Fraw%2Fmaster%2FDeepL%20Translate.taioactions)
 
 ## 使用
 
