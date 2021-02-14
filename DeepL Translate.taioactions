@@ -1,0 +1,303 @@
+{
+  "actions" : [
+    {
+      "type" : "@comment",
+      "parameters" : {
+        "text" : {
+          "value" : "使用前请确认 token 已设置正确。\n---\nv1.3.0 版本更新内容：\n1. 去除 A Translator 支持。"
+        }
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : ""
+        },
+        "name" : {
+          "value" : "token"
+        }
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : "1.3.0"
+        },
+        "name" : {
+          "value" : "version"
+        }
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "@editor.selection-text"
+            }
+          ]
+        },
+        "name" : {
+          "value" : "selectedText"
+        }
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "@editor.full-text"
+            }
+          ]
+        },
+        "name" : {
+          "value" : "fullText"
+        }
+      }
+    },
+    {
+      "type" : "@flow.if",
+      "parameters" : {
+        "blockIdentifier" : "B1560CE0-BD40-44BF-B9FD-248F2069E12F",
+        "condition" : 0,
+        "rhs" : {
+          "value" : ""
+        },
+        "lhs" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "fullText"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type" : "@ui.menu",
+      "parameters" : {
+        "prompt" : {
+          "value" : "文本来源"
+        },
+        "selectAllByDefault" : false,
+        "multiValue" : false,
+        "lines" : {
+          "value" : "剪贴板\n输入文字"
+        }
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "@input"
+            }
+          ]
+        },
+        "name" : {
+          "value" : "inputSource"
+        }
+      }
+    },
+    {
+      "type" : "@flow.if",
+      "parameters" : {
+        "blockIdentifier" : "D1CE26C5-A7B6-4A4E-9B6E-F1546E325153",
+        "condition" : 0,
+        "rhs" : {
+          "value" : "剪贴板"
+        },
+        "lhs" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "inputSource"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "@clipboard.text"
+            }
+          ]
+        },
+        "name" : {
+          "value" : "fullText"
+        }
+      }
+    },
+    {
+      "type" : "@flow.else",
+      "parameters" : {
+        "blockIdentifier" : "D1CE26C5-A7B6-4A4E-9B6E-F1546E325153"
+      }
+    },
+    {
+      "type" : "@flow.if",
+      "parameters" : {
+        "blockIdentifier" : "8F1D0FE7-27C4-4458-BB44-1BFBD08544C1",
+        "condition" : 0,
+        "rhs" : {
+          "value" : "输入文字"
+        },
+        "lhs" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "inputSource"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type" : "@ui.text-input",
+      "parameters" : {
+        "prompt" : {
+          "value" : "请输入文字"
+        },
+        "keyboardType" : 0,
+        "initialText" : {
+          "value" : ""
+        },
+        "singleLineText" : false
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "@input"
+            }
+          ]
+        },
+        "name" : {
+          "value" : "fullText"
+        }
+      }
+    },
+    {
+      "type" : "@flow.else",
+      "parameters" : {
+        "blockIdentifier" : "8F1D0FE7-27C4-4458-BB44-1BFBD08544C1"
+      }
+    },
+    {
+      "type" : "@flow.endif",
+      "parameters" : {
+        "blockIdentifier" : "8F1D0FE7-27C4-4458-BB44-1BFBD08544C1"
+      }
+    },
+    {
+      "type" : "@flow.endif",
+      "parameters" : {
+        "blockIdentifier" : "D1CE26C5-A7B6-4A4E-9B6E-F1546E325153"
+      }
+    },
+    {
+      "type" : "@flow.else",
+      "parameters" : {
+        "blockIdentifier" : "B1560CE0-BD40-44BF-B9FD-248F2069E12F"
+      }
+    },
+    {
+      "type" : "@flow.endif",
+      "parameters" : {
+        "blockIdentifier" : "B1560CE0-BD40-44BF-B9FD-248F2069E12F"
+      }
+    },
+    {
+      "type" : "@ui.menu",
+      "parameters" : {
+        "prompt" : {
+          "value" : "目标语言"
+        },
+        "selectAllByDefault" : false,
+        "multiValue" : false,
+        "lines" : {
+          "value" : "Chinese\nEnglish\nGerman\nFrench\nJapanese\nSpanish"
+        }
+      }
+    },
+    {
+      "type" : "@flow.set-variable",
+      "parameters" : {
+        "value" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "@input"
+            }
+          ]
+        },
+        "name" : {
+          "value" : "targetLanguage"
+        }
+      }
+    },
+    {
+      "type" : "@flow.javascript",
+      "parameters" : {
+        "script" : {
+          "value" : "'use strict';\n\nconst version = $actions.getVar('version');\nconst text = getText();\nconst token = $actions.getVar('token');\n\nasync function main() {\n  $ui.loading(true);\n\n  if (!token) {\n    throw new Error('Please set token first.');\n  }\n\n  if (!text) {\n    throw new Error('Please run this action with text selections or use the action button on the top right corner.');\n  }\n\n  const url = 'https:\/\/api.deepl.com\/v2\/translate';\n  const result = await new Promise((resolve, reject) => {\n    $http\n      .request({\n        method: 'POST',\n        url,\n        header: {\n          'content-type': 'application\/x-www-form-urlencoded',\n        },\n        body: {\n          text,\n          target_lang: getTargetLanguage(),\n          auth_key: token,\n        },\n        showProgress: true,\n      })\n      .then(({ data, response, error }) => {\n        if (error) {\n          if (response.statusCode) {\n            const code = response.statusCode;\n\n            if (code < 500) {\n              reject(new Error(`Error ${code}: please make sure your token and params are valid.`));\n            } else {\n              reject(new Error(`Error ${code}: server error`));\n            }\n          } else {\n            reject(new Error(`Error: could not make a request`));\n          }\n\n          return;\n        }\n\n        const translations = data.translations;\n        const result = translations.map((item) => item.text);\n\n        resolve(result.join('\\n'));\n      });\n  });\n\n  $ui.loading(false);\n\n  $actions.resolve(result);\n}\n\nfunction getTargetLanguage() {\n  switch ($actions.getVar('targetLanguage')) {\n    case 'English':\n      return 'EN';\n    case 'Chinese':\n      return 'ZH';\n    case 'German':\n      return 'DE';\n    case 'French':\n      return 'FR';\n    case 'Japanese':\n      return 'JA';\n    case 'Spanish':\n      return 'ES';\n  }\n}\n\nfunction getText() {\n  if ($actions.getVar('selectedText')) return $actions.getVar('selectedText').trim();\n  return $actions.getVar('fullText').trim();\n}\n\nmain()\n  .catch((err) => {\n    $ui.loading(false);\n    $actions.reject(err.message);\n  })\n  .finally(() => {\n    $ui.loading(false);\n  });\n"
+        }
+      }
+    },
+    {
+      "type" : "@ui.render-text",
+      "parameters" : {
+        "title" : {
+          "value" : "翻译结果"
+        },
+        "fullScreen" : false,
+        "text" : {
+          "value" : "$",
+          "tokens" : [
+            {
+              "location" : 0,
+              "value" : "@input"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "buildVersion" : 1,
+  "name" : "DeepL Translate",
+  "clientMinVersion" : 1,
+  "summary" : "",
+  "icon" : {
+    "glyph" : "a",
+    "color" : "#7881FA"
+  },
+  "clientVersion" : 66
+}
